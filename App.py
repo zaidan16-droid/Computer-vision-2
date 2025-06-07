@@ -1,5 +1,4 @@
 import streamlit as st
-import av
 from detect_utils import detect_objects
 
 st.title("🔍 Real-Time Object Detection")
