@@ -1,4 +1,8 @@
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, RTCConfiguration
+import av
+from detect_utils import detect_objects
+import opencv 
 st.title("🔍 Real-Time Object Detection")
 
 # Konfigurasi WebRTC (opsional, bisa dikosongkan juga)
