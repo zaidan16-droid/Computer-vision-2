@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 import av
 from utils.detection import detect_objects
 
