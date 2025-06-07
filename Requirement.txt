@@ -1,7 +1,5 @@
-streamlit>=1.32
-streamlit-webrtc>=0.45
-opencv-python-headless>=4.5
-torch>=2.0
-torchvision>=0.15
-numpy>=1.23
-ultralytics>=8.0
+streamlit
+streamlit-webrtc
+torch
+opencv-python
+numpy
