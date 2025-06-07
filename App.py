@@ -1,6 +1,4 @@
 import streamlit as st
-from detect_utils import detect_objects
-
 st.title("🔍 Real-Time Object Detection")
 
 # Konfigurasi WebRTC (opsional, bisa dikosongkan juga)
