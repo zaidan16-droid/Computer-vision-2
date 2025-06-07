@@ -1,6 +1,5 @@
 import streamlit as st
-from streamlit_webrtc
-import webrtc_streamer, VideoTransformerBase
+from streamlit-webrtc import webrtc-streamer, VideoTransformerBase
 import av
 import torch
 import numpy as np
