@@ -1,5 +1,4 @@
 import streamlit as st
-RTCConfiguration
 import av
 from detect_utils import detect_objects
 
