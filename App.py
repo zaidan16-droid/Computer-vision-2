@@ -1,22 +1,16 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, RTCConfiguration
-import av
-from detect_utils import detect_objects
-import opencv 
-st.title("🔍 Real-Time Object Detection")
+from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
+from detector import ObjectCounter
 
-# Konfigurasi WebRTC (opsional, bisa dikosongkan juga)
-rtc_configuration = RTCConfiguration({"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+class VideoTransformer(VideoTransformerBase):
+    def __init__(self):
+        self.counter = ObjectCounter()
 
-class VideoProcessor(VideoProcessorBase):
-    def recv(self, frame):
+    def transform(self, frame):
         img = frame.to_ndarray(format="bgr24")
-        img = detect_objects(img)
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+        img, count = self.counter.detect_and_count(img)
+        return img
 
-webrtc_streamer(
-    key="object-detection",
-    video_processor_factory=VideoProcessor,
-    rtc_configuration=rtc_configuration,
-    media_stream_constraints={"video": True, "audio": False},
-)
+st.title("🔢 Object Counter from Webcam")
+
+webrtc_streamer(key="object-counter", video_processor_factory=VideoTransformer)
