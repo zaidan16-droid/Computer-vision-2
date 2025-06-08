@@ -1,6 +1,3 @@
-import logging
-from typing import List, NamedTuple
-
 import av
 import cv2
 import numpy as np
