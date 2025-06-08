@@ -1,0 +1,12 @@
+# Instal Ultralytics
+!pip install ultralytics
+
+from ultralytics import YOLO
+
+# Buat model dan latih
+model = YOLO('yolov8n.pt')  # atau custom model
+
+model.train(data='path_to_dataset.yaml', epochs=50)
+
+# Simpan model
+model.save('best.pt')
