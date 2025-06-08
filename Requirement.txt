@@ -1,5 +1,6 @@
 streamlit
 streamlit-webrtc
-torch
 opencv-python
-numpy
+torch
+torchvision
+pandas
